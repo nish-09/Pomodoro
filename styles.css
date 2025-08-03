@@ -90,6 +90,42 @@ header p {
     font-family: 'Atma', cursive;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    width: clamp(40px, 8vw, 80px);
+    height: clamp(40px, 8vw, 80px);
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.header-text {
+    text-align: left;
+}
+
+.header-text h1 {
+    margin-bottom: 0.25rem;
+}
+
+.header-text p {
+    margin: 0;
+}
+
 .timer-container {
     margin-bottom: 2rem;
 }
@@ -708,6 +744,13 @@ footer {
 }
 
 /* Responsive Design */
+@media (min-width: 1200px) {
+    .logo {
+        width: clamp(60px, 10vw, 100px);
+        height: clamp(60px, 10vw, 100px);
+    }
+}
+
 @media (max-width: 768px) {
     .progress-ring-svg {
         width: 300px;
@@ -725,6 +768,21 @@ footer {
     .container {
         padding: 1.5rem;
         margin: 1rem;
+    }
+
+    .logo-container {
+        flex-direction: row;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .logo {
+        width: clamp(35px, 6vw, 50px);
+        height: clamp(35px, 6vw, 50px);
+    }
+
+    .header-text {
+        text-align: left;
     }
 
     header h1 {
@@ -783,6 +841,11 @@ footer {
 }
 
 @media (max-width: 360px) {
+    .logo {
+        width: clamp(30px, 5vw, 40px);
+        height: clamp(30px, 5vw, 40px);
+    }
+
     .progress-ring-svg {
         width: 200px;
         height: 200px;
